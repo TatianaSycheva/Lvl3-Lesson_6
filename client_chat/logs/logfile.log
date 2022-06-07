@@ -1,0 +1,10 @@
+INFO  2022-06-07 15:13:08 {main} com.example.server.ServerMain (ServerMain.java31) - Сервер запущен
+INFO  2022-06-07 15:13:19 {main} com.example.server.ServerMain (ServerMain.java35) - Клиент подключился
+INFO  2022-06-07 15:13:19 {pool-2-thread-1} com.example.server.ClientHandler (ClientHandler.java93) - Клиент под ником nick1 залогинился
+INFO  2022-06-07 15:13:35 {main} com.example.server.ServerMain (ServerMain.java35) - Клиент подключился
+INFO  2022-06-07 15:13:35 {pool-3-thread-1} com.example.server.ClientHandler (ClientHandler.java93) - Клиент под ником nick2 залогинился
+INFO  2022-06-07 15:13:59 {main} com.example.server.ServerMain (ServerMain.java35) - Клиент подключился
+INFO  2022-06-07 15:13:59 {pool-4-thread-1} com.example.server.ClientHandler (ClientHandler.java93) - Клиент под ником nick3 залогинился
+INFO  2022-06-07 15:14:20 {pool-4-thread-1} com.example.server.ServerMain (ServerMain.java70) - Клиент nick3 отключился
+INFO  2022-06-07 15:14:22 {pool-3-thread-1} com.example.server.ServerMain (ServerMain.java70) - Клиент nick2 отключился
+INFO  2022-06-07 15:14:24 {pool-2-thread-1} com.example.server.ServerMain (ServerMain.java70) - Клиент nick1 отключился

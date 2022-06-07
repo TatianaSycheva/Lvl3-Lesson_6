@@ -6,3 +6,8 @@ nick2: Здравствуйте!
 nick2: виявияви
 nick1: круто, все работает
 nick2: ага
+nick2: dfzdfbzdf
+nick2: zdfbzdf
+nick2: zdfbzdfb
+nick3: zgbdgbzdgb
+User nick3 is out!

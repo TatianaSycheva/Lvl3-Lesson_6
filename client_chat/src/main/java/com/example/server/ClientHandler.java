@@ -90,6 +90,7 @@ public class ClientHandler {
         if (server.isNickFree(nickname) && nickname != null) {
             server.subscribe(ClientHandler.this);
             sendServiceMsg("/authOK " + "Вы залогинились под ником: " + nickname);
+            ServerMain.logger.info("Клиент под ником {} залогинился", nickname);
             server.sendOnlineUsers();
             return true;
         } else {
@@ -99,7 +100,7 @@ public class ClientHandler {
     }
 
     public void sendMsg(String msg) {
-        System.out.println("Client send message: " + msg);
+        System.out.printf("Client send message: %s %n", msg);
         try {
             out.writeUTF(msg + "\n");
         } catch (IOException e) {
@@ -108,7 +109,7 @@ public class ClientHandler {
     }
 
     public void sendServiceMsg(String msg) {
-        System.out.println("Client send message: " + msg);
+        System.out.printf("Client send message: %s %n", msg);
         try {
             out.writeUTF(msg + "\n");
         } catch (IOException e) {

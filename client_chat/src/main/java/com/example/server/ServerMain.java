@@ -1,17 +1,24 @@
 package com.example.server;
 
+
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Collections;
 import java.util.List;
 import java.util.Vector;
-import java.util.logging.Logger;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class ServerMain {
     private Vector<ClientHandler> clientHandlers;
+    protected static final Logger logger = LogManager.getLogger(ServerMain.class.getName());
+
+
     public void start() {
         ServerSocket server;
         Socket socket;
@@ -21,11 +28,11 @@ public class ServerMain {
         try {
             AuthServer.connect();
             server = new ServerSocket (8189);
-            System.out.println("Сервер запущен");
+            logger.info("Сервер запущен");
 
             while (true) {
                 socket = server.accept();
-                System.out.println("Клиент подключился");
+                logger.info("Клиент подключился");
                 new  ClientHandler(socket, this);
 
             }
@@ -60,6 +67,7 @@ public class ServerMain {
 
     public void unsubscribe(ClientHandler client) {
         sendToAll("User " + client.getNickname() + " is out!");
+        logger.info("Клиент {} отключился", client.getNickname());
         sendOnlineUsers();
         clientHandlers.remove(client);
 

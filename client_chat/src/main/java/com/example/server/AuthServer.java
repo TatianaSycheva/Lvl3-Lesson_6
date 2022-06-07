@@ -52,7 +52,13 @@ public class AuthServer {
 
     public static void disconnect() {
         try {
-            connection.close();
+            if (connection != null) connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (statement != null) statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
